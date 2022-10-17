@@ -1,0 +1,24 @@
+                    <div class="container">
+            <a href="?pagina=home"><img style="width: 90px; height: 90px;" src="img/loud.png" title="Logo" alt="Logo"></a>
+            <div id="menu">
+                <a href="?pagina=empresa">Empresas</a>
+                <a href="?pagina=contato">Contatos</a>
+                <a href="?pagina=info">Informações</a>
+                <a href="?pagina=endereco">Endereços</a>
+                <a href="?pagina=infocomp">Info. Complementares</a>
+            </div>
+        </div>
+
+          <?php
+          while($select = mysqli_fetch_array($dados)){
+            
+            $id = $select['id'];
+            $nome = $select['nome'];
+            $email = $select['email'];
+
+            echo " <a href='?pagina=tabela?nome=".$id."'>
+            <ion-icon name='business'></ion-icon><span>".$nome."</span>
+            </a>";
+            
+            }
+        ?>
